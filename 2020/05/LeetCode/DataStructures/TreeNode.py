@@ -10,6 +10,7 @@ class TreeNode:
     
     def insertList(self, root, data:List):
         for i, a in enumerate(data):
+            if a is None: continue
             node = TreeNode(a)
             self.insert(root, node)
         
