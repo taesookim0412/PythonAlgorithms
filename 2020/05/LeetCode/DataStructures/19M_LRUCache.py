@@ -1,3 +1,56 @@
+from _collections import OrderedDict
+
+
+#Runtime: 176 ms, faster than 95.19% of Python3 online submissions for LRU Cache.
+#Memory Usage: 23.4 MB, less than 6.06% of Python3 online submissions for LRU Cache.
+#godbless ordered hashmaps
+
+class LRUCache:
+
+    data = OrderedDict()
+    max = 0
+    def __init__(self, capacity: int):
+        self.data = OrderedDict()
+        self.max = capacity
+    def get(self, key: int) -> int:
+        if key not in self.data: return -1
+        val = self.data[key]
+        del self.data[key]
+        self.data[key] = val
+        return self.data[key]
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.data:
+            del self.data[key]
+            self.data[key] = value
+        else:
+            if len(self.data) < self.max:
+                self.data[key] = value
+            else:
+                delkey = next(iter(self.data))
+                del self.data[delkey]
+                self.data[key] = value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #possible to attempt with OrderedDict however
 #want indexing practice
 
@@ -5,49 +58,48 @@
 #doesnt update the indexes
 #a possiblity is a high fixed array of index = key
 #requires a DLL
-#TODO: Find a non-library non-secondary data structure method with O(1) time complexity
 
-class LRUCache:
-    data = {}
-    order = []
-    max = 0
-    def __init__(self, capacity: int):
-        self.reset(capacity)
-    def get(self, key: int) -> int:
-        if key not in self.data: return -1
-        self.pushToEnd(key)
-        print(self.order)
-        return self.data[key][1]
-
-    def put(self, key: int, value: int) -> None:
-        if key in self.data:
-            self.data[key] = [self.data[key][0], value]
-            self.pushToEnd(key)
-        else:
-            if len(self.data) < self.max:
-                self.order.append(key)
-                self.data[key] = [len(self.order)-1, value]
-            else:
-                #delete and insert
-                keyToDelete = self.order[0]
-                del self.data[keyToDelete]
-                del self.order[0]
-                self.order.append(key)
-                self.data[key] = [len(self.order)-1, value]
-        #print(cache.data)
-
-
-
-    def reset(self, capacity):
-        self.data = {}
-        self.order = []
-        self.max = capacity
-
-    def pushToEnd(self, key):
-        idxOfKey = self.data[key][0]
-        del self.order[idxOfKey]
-        self.order.append(key)
-        self.data[key][0] = len(self.order)-1
+# class LRUCache:
+#     data = {}
+#     order = []
+#     max = 0
+#     def __init__(self, capacity: int):
+#         self.reset(capacity)
+#     def get(self, key: int) -> int:
+#         if key not in self.data: return -1
+#         self.pushToEnd(key)
+#         print(self.order)
+#         return self.data[key][1]
+#
+#     def put(self, key: int, value: int) -> None:
+#         if key in self.data:
+#             self.data[key] = [self.data[key][0], value]
+#             self.pushToEnd(key)
+#         else:
+#             if len(self.data) < self.max:
+#                 self.order.append(key)
+#                 self.data[key] = [len(self.order)-1, value]
+#             else:
+#                 #delete and insert
+#                 keyToDelete = self.order[0]
+#                 del self.data[keyToDelete]
+#                 del self.order[0]
+#                 self.order.append(key)
+#                 self.data[key] = [len(self.order)-1, value]
+#         #print(cache.data)
+#
+#
+#
+#     def reset(self, capacity):
+#         self.data = {}
+#         self.order = []
+#         self.max = capacity
+#
+#     def pushToEnd(self, key):
+#         idxOfKey = self.data[key][0]
+#         del self.order[idxOfKey]
+#         self.order.append(key)
+#         self.data[key][0] = len(self.order)-1
 
 
 
