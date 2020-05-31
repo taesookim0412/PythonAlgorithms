@@ -1,7 +1,7 @@
 class Solution:
     #Pairing fundamentals
     #Runtime: 28 ms, faster than 88.39% of Python3 online submissions for Decode Ways.
-    #Memory Usage: 14.1 MB, less than 12.00% of Python3 online submissions for Decode Ways.
+    ##Memory Usage: 14.1 MB, less than 12.00% of Python3 online submissions for Decode Ways.
     def numDecodings(self, s: str) -> int:
         dp = [0] * (len(s) + 1)
         #base case
