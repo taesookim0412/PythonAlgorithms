@@ -1,6 +1,6 @@
 from typing import List
 
-
+#Don't understand the que
 class Solution:
     def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
         n = len(matrix)
