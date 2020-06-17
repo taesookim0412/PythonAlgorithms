@@ -16,8 +16,8 @@ class Solution:
         if inorder:
             ind = inorder.index(preorder.pop(0))
             root = TreeNode(inorder[ind])
-            root.left = self.buildTree(preorder, inorder)
-            root.right = self.buildTree(preorder, inorder)
+            root.left = self.buildTree(preorder, inorder[:ind])
+            root.right = self.buildTree(preorder, inorder[ind:])
             return root
 
 
