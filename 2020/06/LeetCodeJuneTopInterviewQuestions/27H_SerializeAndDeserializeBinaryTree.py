@@ -1,9 +1,13 @@
 #Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+#Runtime: 124 ms, faster than 65.83% of Python3 online submissions for Serialize and Deserialize Binary Tree.
+#Memory Usage: 18.6 MB, less than 41.48% of Python3 online submissions for Serialize and Deserialize Binary Tree.
+
 
 class Codec:
 
