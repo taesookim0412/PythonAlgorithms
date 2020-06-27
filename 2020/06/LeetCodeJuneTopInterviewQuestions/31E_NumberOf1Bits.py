@@ -11,8 +11,8 @@ class Solution:
             if n & mask != 0:
                 ones += 1
             mask <<= 1
-            print(n&mask)
-            print(mask)
+            #print(n&mask)
+            #print(mask)
         return ones
 #TODO: Study bit trick (Solution #2)
 
