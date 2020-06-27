@@ -1,0 +1,28 @@
+https://leetcode.com/problems/perfect-squares/discuss/707511/Recursive-or-Top-Down-or-Bottom-Up-DP-or-Explained-Recursion-Tree
+Amazing
+
+
+Recursive perfect squares:
+class Solution {
+    public int numSquares(int n) {
+        if(n < 4) return n;
+        int count = n; // as we can form number n with sum of atleqast n 1's.
+        for(int i = 1; i* i <= n; i++) {
+            count = Math.min(count, numSquares(n - i * i) + 1);
+        }
+        return count;
+    }
+}
+
+https://leetcode.com/problems/coin-change/discuss/699097/Python-simple-solution
+DP coin change:
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:=
+        dp = [0] + [amount + 1] * amount                                # fill invalid amount i.e amount + 1 for all amounts ranging from 0 to amount.
+        dp[0] = 0
+        for value in range(amount+1):                                   # for each value till amount
+            for coin in (coins):                                        # for each coin
+                if(coin <= value):                                      # check if this coin can be used make value i.
+                    dp[value] = min(dp[value], 1 + dp[value - coin])    # 1 => current coin included, check the min coins required to make remaining value i.e  value - coin
+        return -1 if(dp[amount] > amount) else dp[amount]
+
