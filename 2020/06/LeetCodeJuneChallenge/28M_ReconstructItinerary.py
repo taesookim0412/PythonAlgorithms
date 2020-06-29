@@ -12,20 +12,15 @@ class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         ticketsMap = collections.defaultdict(dict)
         for i, a in enumerate(tickets):
-            if a[0] not in ticketsMap:
-                ticketsMap[a[0]] = [a[1]]
-            else:
-                heapq.heappush(ticketsMap[a[0]], a[1])
-        print(ticketsMap)
+            if not ticketsMap[a[0]]:
+                ticketsMap[a[0]] = []
+            heapq.heappush(ticketsMap[a[0]], a[1])
         dest = ["JFK"]
         visited = []
         while dest:
             while ticketsMap[dest[-1]]:
                 dest += heapq.heappop(ticketsMap[dest[-1]]),
-                print(f"dest: {dest}")
-            #not in map
             visited += dest.pop(-1),
-            print(f"visited: {visited}")
         return visited[::-1]
 
 
