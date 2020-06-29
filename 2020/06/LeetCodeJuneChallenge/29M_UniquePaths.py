@@ -17,15 +17,20 @@ class Solution:
 
 
 #Woops this is shortest path.
+#nice
 class Solution2:
     def uniquePaths(self, m: int, n: int) -> int:
         dp = [[i-1 for i in range(m+1)] for _ in range(n+1)]
         for i in range(n):
             for j in range(m):
-                dp[i+1][j+1] = max(dp[i][j+1], dp[i+1][j]) + 1
+                if j==1 and i > 0:
+                    dp[i+1][j+1] = dp[i][j+1] + 1
+                    continue
+                dp[i+1][j+1] = min(dp[i][j+1], dp[i+1][j]) + 1
+
         print(np.asmatrix(dp))
         return dp[-1][-1]
 
 
-s = Solution()
+s = Solution2()
 print(s.uniquePaths(7, 3))
