@@ -3,24 +3,24 @@
  07/02/2020 127
 Goal: 1500  
 
-######"EasyToHard": Every leetcode challenge from highest acceptance rate -> lowest
+#### "EveryChallenge": Every leetcode challenge from highest acceptance rate -> lowest
 
-###May
+### May
 (26) April Challenge  
 
-###June - 
-HackerRank: 
+### June
+#### HackerRank:  
 (4) Hack The Interview V  
 
-LeetCode:
+#### LeetCode:  
 (30) JuneChallenge  
 (41) Interview Questions  
 (2) May Challenge  
-(22) EasyToHard  
+(22) EveryChallenge  
 (2) Notes  
 
-###July - 
-(X) LeetCodeJulyChallenge  
-(X) EasyToHard  
+### July - 
+(X) LeetCodeJulyChallenge    
+(X) EveryChallenge  
 (X) Notes  
 
