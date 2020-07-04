@@ -1,0 +1,18 @@
+Daily:
+1 Dynamic Programing
+1 Backtracking
+1 String
+1 Binary Search (Two Pointer)
+Just do one of everything every day
+
+07/03/2020:
++-= Backtracking:
+(Backtrack) Letter Tile Possibilities
+(BFS, Forward Backtrack) Letter Case Permutation
+-= Dynamic Programming:
+(Bit tricks) Counting Bits
+-= Strings:
+(String Join) Generate String with Characters With Odd Counts
++-= Two Pointer:
+!! (Binary Search)(Matrix)(SortedDictionaryListHeapPop) K Weakest Rows In A Matrix
+
