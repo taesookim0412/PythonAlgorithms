@@ -1,8 +1,8 @@
 Daily:
-1 Dynamic Programing
+1 Dynamic Programmming
 1 Backtracking
 1 String
-1 Binary Search (Two Pointer)
+1 Binary Search
 Just do one of everything every day
 
 07/03/2020:
@@ -13,6 +13,16 @@ Just do one of everything every day
 (Bit tricks) Counting Bits
 -= Strings:
 (String Join) Generate String with Characters With Odd Counts
-+-= Two Pointer:
++-= Binary Search:
 !! (Binary Search)(Matrix)(SortedDictionaryListHeapPop) K Weakest Rows In A Matrix
 
+07/04/2020:
++= Backtracking:
+(Backtrack) Combination Sum
++= Dynamic Programming:
+(DP) Stone Game
+-= String:
+Reverse Words In A String III
+-= Binary Search:
+Intersection of Two Arrays
+_Capacity To Ship Packages Within D Days [started]

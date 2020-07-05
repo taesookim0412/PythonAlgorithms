@@ -15,6 +15,7 @@ class Solution:
                     ct += 1
                     entry = [(b, i), (j, b), (b, i//3, j//3)]
                     seen.update(entry)
+        print(seen)
         return len(seen) == ct * 3
 
 
