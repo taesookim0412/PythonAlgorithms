@@ -49,3 +49,18 @@ _Capacity To Ship Packages Within D Days [started]
 [Medium][HashMap] Minimum Number of Steps to Make Two Strings Anagram
 
 Diagram: Reducing Dishes, Anagram
+
+07/06/2020:
++= Backtracking
+!! Palindrome Partitioning
+= Binary Search
+[Easy] Binary Search
+-= Dynamic Programming
+[Optimized] Reducing Dishes into 2-i-index (not Summation answer)
+[DP][Two initials] Min Cost Climbing Stairs
+[DP] Count Square Matrices With All Ones
+-= Strings
+[Easy] Unique Email Addresses
+
+Private Journal Entry (07/06/2020)
+https://github.com/taesookim0412/PrivateJournal/blob/master/07062020.txt
