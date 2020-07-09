@@ -62,5 +62,16 @@ Diagram: Reducing Dishes, Anagram
 -= Strings
 [Easy] Unique Email Addresses
 
+07/07/2020:
+Hashmap:
+2Sum
+3Sum
+
+07/08/2020
++=Binary Search:
+Find Smallest Letter Greater Than Target
+
+
+
 Private Journal Entry (07/06/2020)
 https://github.com/taesookim0412/PrivateJournal/blob/master/07062020.txt
