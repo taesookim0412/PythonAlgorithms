@@ -27,6 +27,9 @@ from typing import List
 
 #Two Pointer TLE
 
+#Binary Search
+#Runtime: 56 ms, faster than 11.98% of Python3 online submissions for Valid Perfect Square.
+#Memory Usage: 14.2 MB, less than 5.26% of Python3 online submissions for Valid Perfect Square.
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
         l = 0
@@ -37,9 +40,10 @@ class Solution:
             if sqrd==num:
                 return True
             elif sqrd < num:
-                l+=1
+                l = mid +1
             else:
-                 r-=1
+                 r = mid - 1
+            print(mid,l,r)
         return False
 
 
