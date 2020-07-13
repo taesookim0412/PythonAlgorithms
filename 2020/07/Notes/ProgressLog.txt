@@ -75,3 +75,9 @@ Find Smallest Letter Greater Than Target
 
 Private Journal Entry (07/06/2020)
 https://github.com/taesookim0412/PrivateJournal/blob/master/07062020.txt
+
+TODO list:
+1. Knapsack
+2. Sliding window
+3. Still need to do DS
+4. Learn up on more concepts
