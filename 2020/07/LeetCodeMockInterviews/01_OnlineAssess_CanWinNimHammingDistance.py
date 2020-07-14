@@ -1,6 +1,9 @@
 import collections
 import numpy as np
 from typing import List
+import collections
+import numpy as np
+from typing import List
 
 #Nim Game: 40/60
 class Solution:
@@ -21,3 +24,13 @@ class Solution:
         if 1 < diff%8 < 5: return True
         else: return False
         return playGame(n,0)
+
+#Res: Accepted
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        mask, ct = 1, 0
+        for i in range(32):
+            if x&mask != y&mask:
+                ct += 1
+            mask <<= 1
+        return ct
