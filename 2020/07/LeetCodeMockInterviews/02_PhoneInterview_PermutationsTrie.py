@@ -48,7 +48,7 @@ class Trie:
         return curr.isTail
 
     def startsWith(self, prefix: str) -> bool:
-        """
+        r"""
         Returns if there is any word in the trie that starts with the given prefix.
         """
         curr = self.root
