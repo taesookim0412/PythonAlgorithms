@@ -1,7 +1,6 @@
 # PythonAlgorithms
 >Estimated total in python:  
  07/02/2020 127
-Goal: 1500  
 
 #### "EveryChallenge": Every leetcode challenge from highest acceptance rate -> lowest
 
@@ -23,4 +22,10 @@ Goal: 1500
 (X) LeetCodeJulyChallenge    
 (X) EveryChallenge  
 (X) Notes  
-
+(X) LeetCodeBacktracking  
+(X) LeetCodeBinarySearch  
+(X) LeetCodeBitManipulation  
+(X) LeetCodeDynamicProgramming  
+(X) LeetCodeStrings  
+(X) LeetCodeMockInterviews  
+(U) LeetCodeCorpMockInterviews  
