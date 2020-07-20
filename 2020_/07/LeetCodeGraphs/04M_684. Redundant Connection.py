@@ -2,10 +2,31 @@ import collections
 import numpy as np
 from typing import List
 
+#TODO: Sip some coffee, find this out
 #Union Find:
+class Solution:
+    def findRedundantConnection(self, edges:List[List[int]]) -> List[int]:
+        parent = [0] * (len(edges)+1)
+        def find(x):
+            if parent[x] == 0:
+                return x
+            print(x)
+            parent[x] = find(parent[x])
+            print(parent)
+            return parent[x]
+        def union(x,y):
+            rootX = find(x)
+            rootY = find(y)
+            print("X, Y, FindX, FindY:", x, y, rootX,rootY)
+            if rootX == rootY:
+                return False
+            parent[rootX] = rootY
+            return True
 
-
-
+        for x, y in edges:
+            if not union(x, y):
+                return [x,y]
+#[1,2],[1,3],[2,3]
 
 
 # Runtime: 96 ms, faster than 19.51% of Python3 online submissions for Redundant Connection.
@@ -37,3 +58,4 @@ class Solution2:
 
 s = Solution()
 print(s.findRedundantConnection([[1,2], [1,3], [2,3]]))
+print(s.findRedundantConnection([[1,2], [2,3], [3,4], [1,4], [1,5]]))
