@@ -2,7 +2,7 @@ import collections
 import numpy as np
 from typing import List
 
-
+#https://leetcode.com/problems/divisor-game/discuss/748412/python-dynamic-programming
 #Runtime: 16 ms, faster than 99.90% of Python3 online submissions for Divisor Game.
 #Memory Usage: 13.7 MB, less than 91.08% of Python3 online submissions for Divisor Game.
 
