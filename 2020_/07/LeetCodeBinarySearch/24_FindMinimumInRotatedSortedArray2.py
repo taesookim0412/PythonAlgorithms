@@ -16,6 +16,7 @@ class Solution:
                 return nums[mid]
             if nums[mid] > nums[0]:
                 l = mid + 1
+            # or elif nums[mid] < nums[-1]:
             elif nums[mid] < nums[0]:
                 r = mid
             elif nums[mid]==nums[-1]:
