@@ -17,6 +17,26 @@ class Solution:
             res.append(len(W) - idx)
         return res
 
+#Brute force
+#Runtime: 560 ms, faster than 50.00% of Python3 online submissions for Compare Strings by Frequency of the Smallest Character.
+#Memory Usage: 14.3 MB, less than 62.96% of Python3 online submissions for Compare Strings by Frequency of the Smallest Character.
+class Solution:
+    def numSmallerByFrequency(self, queries: List[str], words: List[str]) -> List[int]:
+        res = []
+        wordFreqs = [self.getFrequency(word) for word in words]
+        for query in queries:
+            freqCt = 0
+            freq = self.getFrequency(query)
+            for wordFreq in wordFreqs:
+                if freq < wordFreq:
+                    freqCt += 1
+            res += freqCt,
+        return res
+
+    def getFrequency(self, woord) -> int:
+        smallestChr = min(woord)
+        return woord.count(smallestChr)
+
 #Runtime: 5844 ms, faster than 7.30% of Python3 online submissions for Compare Strings by Frequency of the Smallest Character.
 #Memory Usage: 14.3 MB, less than 66.67% of Python3 online submissions for Compare Strings by Frequency of the Smallest Character.
 class Solution2:
