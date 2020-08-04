@@ -1,8 +1,7 @@
 # PythonAlgorithms
 >Estimated total in python:  
- 07/02/2020 127
-
-#### "EveryChallenge": Every leetcode challenge from highest acceptance rate -> lowest
+>08/03/2020 218  
+>07/02/2020 127
 
 ### May
 (26) April Challenge  
@@ -25,7 +24,11 @@
 (X) LeetCodeBacktracking  
 (X) LeetCodeBinarySearch  
 (X) LeetCodeBitManipulation  
+(X) LeetCodeDepthFirstSearch    
 (X) LeetCodeDynamicProgramming  
+(x) LeetCodeGraphs  
+(x) LeetCodeHashTable    
 (X) LeetCodeStrings  
 (X) LeetCodeMockInterviews  
-(U) LeetCodeCorpMockInterviews  
+
+### August - 
