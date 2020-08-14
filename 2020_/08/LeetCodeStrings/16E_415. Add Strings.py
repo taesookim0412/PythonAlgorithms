@@ -30,6 +30,28 @@ s = Solution()
 print(s.addStrings("10", "220"))
 print(s.addStrings("9", "1"))
 print(s.addStrings("19", "81"))
+print(s.addStrings("119", "181"))
+
+
+#Runtime: 124 ms, faster than 9.65% of Python3 online submissions for Add Strings.
+#Memory Usage: 13.9 MB, less than 64.78% of Python3 online submissions for Add Strings.
+class Solution2:
+    def addStrings(self, num1: str, num2: str) -> str:
+        #str to num
+        #10
+        def strToNum(n):
+            num_1 = 0
+            place = 10 ** (len(n) - 1)
+            for i in range(len(n)):
+                c = int(n[i]) * (place)
+                num_1 += c
+                place//=10
+            return num_1
+        return str(strToNum(num1) + strToNum(num2))
+
+
+
+
 
 #Runtime: 388 ms, faster than 5.24% of Python3 online submissions for Add Strings.
 #Memory Usage: 14 MB, less than 38.13% of Python3 online submissions for Add Strings.
