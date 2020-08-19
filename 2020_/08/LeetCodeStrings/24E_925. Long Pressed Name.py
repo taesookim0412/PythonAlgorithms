@@ -3,6 +3,24 @@ import numpy as np
 from typing import List
 
 
+#Runtime: 60 ms, faster than 10.25% of Python3 online submissions for Long Pressed Name.
+#Memory Usage: 13.6 MB, less than 97.52% of Python3 online submissions for Long Pressed Name.
+
+class Solution:
+    def isLongPressedName(self, name:str, typed: str):
+        nI, tI = 0, 0
+        while tI < len(typed) and nI < len(name):
+            if typed[tI] != name[nI]:
+                return False
+            repeats = 0
+            while tI < len(typed) and nI < len(name) and typed[tI] == name[nI]:
+                tI += 1
+                repeats += 1
+            while nI < len(name) and repeats > 0 and typed[tI - 1] == name[nI]:
+                nI += 1
+                repeats -= 1
+        return True if nI == len(name) and tI == len(typed) else False
+
 #GroupBy Solution would be nice
 
 #12011
@@ -13,7 +31,7 @@ from typing import List
 # Runtime: 60 ms, faster than 10.28% of Python3 online submissions for Long Pressed Name.
 # Memory Usage: 14 MB, less than 16.34% of Python3 online submissions for Long Pressed Name.
 
-class Solution:
+class Solution2:
     def isLongPressedName(self, name: str, typed: str) -> bool:
         def numify(s):
             res = [0] * (len(s))
@@ -52,13 +70,13 @@ s = Solution()
 print(s.isLongPressedName("wada", "waada"))
 print(s.isLongPressedName("wada", "waada"))
 print(s.isLongPressedName("mata", "maaattta"))
-print(s.isLongPressedName("yomata", "youmata"))
 print(s.isLongPressedName("teelee", "tteelee"))
 
-
-
+print('False Results')
+print(s.isLongPressedName("yomata", "youmata"))
 print(s.isLongPressedName("halllla", "hallaa"))
 print(s.isLongPressedName("halo", "hola"))
 print(s.isLongPressedName("saeed","ssaaedd"))
 print(s.isLongPressedName("pyplrz",
 "ppyypllr"))
+print(s.isLongPressedName("alex", "alexxr"))

@@ -3,10 +3,50 @@ import numpy as np
 from typing import List
 import math
 
+
+#Runtime: 92 ms, faster than 54.07% of Python3 online submissions for Repeated Substring Pattern.
+#Memory Usage: 13.9 MB, less than 42.42% of Python3 online submissions for Repeated Substring Pattern.
+
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        if len(s) == 1: return False
+        sList = list(s)
+        ls = list(s[:math.ceil(len(s)/2)])
+        for i in range(len(ls) - 1, -1, -1):
+            #print(ls)
+            #i+1 or len(ls)
+            if (len(s)/len(ls)).is_integer():
+                times = len(s) // len(ls)
+                ls2 = ls * times
+                if ls2 == sList:
+                    return True
+                #print(ls2, "\n", sList)
+            ls.pop()
+        return False
+
+#Runtime: 104 ms, faster than 50.51% of Python3 online submissions for Repeated Substring Pattern.
+#Memory Usage: 13.9 MB, less than 42.42% of Python3 online submissions for Repeated Substring Pattern.
+class Solution2:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        if len(s) == 1: return False
+        sList = list(s)
+        ls = list(s[:math.ceil(len(s)/2)])
+        for i in range(len(ls) - 1, -1, -1):
+            #print(ls)
+            #i+1 or len(ls)
+            if len(s)%len(ls) == 0:
+                times = len(s) // len(ls)
+                ls2 = ls * times
+                if ls2 == sList:
+                    return True
+                #print(ls2, "\n", sList)
+            ls.pop()
+        return False
+
 #Runtime: 440 ms, faster than 9.59% of Python3 online submissions for Repeated Substring Pattern.
 #Memory Usage: 14 MB, less than 30.69% of Python3 online submissions for Repeated Substring Pattern.
 
-class Solution:
+class Solution3:
     def repeatedSubstringPattern(self, s: str) -> bool:
         if len(s) == 1: return False
         sList = list(s)
@@ -27,7 +67,7 @@ class Solution:
 #Our termination takes too long, reverse the loop
 #Runtime: 84 ms, faster than 55.68% of Python3 online submissions for Repeated Substring Pattern.
 #Memory Usage: 14.1 MB, less than 12.03% of Python3 online submissions for Repeated Substring Pattern.
-class Solution2:
+class Solution3:
     def repeatedSubstringPattern(self, s: str) -> bool:
         ls = ""
         rs = list(s)[::-1]
@@ -74,11 +114,14 @@ class Solution4:
 s = Solution()
 print(s.repeatedSubstringPattern("abab"))
 print(s.repeatedSubstringPattern("ababab"))
-print(s.repeatedSubstringPattern("abcdabra"))
-#True
 print(s.repeatedSubstringPattern("babbabbabbabbab"))
 print(s.repeatedSubstringPattern("zzz"))
+
+
+
 print(s.repeatedSubstringPattern("a"))
+print(s.repeatedSubstringPattern("abcdabra"))
+
 
 
 
