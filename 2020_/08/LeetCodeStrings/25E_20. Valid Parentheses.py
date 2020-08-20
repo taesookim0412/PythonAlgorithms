@@ -2,9 +2,27 @@ import collections
 import numpy as np
 from typing import List
 
+#([]{})
+
+#Runtime: 24 ms, faster than 94.97% of Python3 online submissions for Valid Parentheses.
+#Memory Usage: 13.9 MB, less than 50.45% of Python3 online submissions for Valid Parentheses.
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        paren_conjugate = {'(':')','{':'}','[':']'}
+        stack = []
+        for c in s:
+            if c in paren_conjugate:
+                stack += paren_conjugate[c],
+            else:
+                if stack and stack[-1] == c:
+                    stack.pop()
+                else:
+                    return False
+        return True if not stack else False
 
 #wrong
-class Solution:
+class Solution2:
     def isValid(self, s: str) -> bool:
         enders = {'(':')',
                   '{':'}',

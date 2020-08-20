@@ -1,12 +1,26 @@
 import collections
 import numpy as np
 from typing import List
+import itertools
 
+#Runtime: 36 ms, faster than 56.58% of Python3 online submissions for Long Pressed Name.
+#Memory Usage: 13.9 MB, less than 36.63% of Python3 online submissions for Long Pressed Name.
+
+class Solution:
+    def isLongPressedName(self, name:str, typed:str):
+        grps_A = [(a, len(list(b))) for a, b in itertools.groupby(name)]
+        grps_B = [(a, len(list(b))) for a, b in itertools.groupby(typed)]
+        if len(grps_A) != len(grps_B):
+            return False
+        for a, b in zip(grps_A, grps_B):
+            if a[0] != b[0] or a[1] > b[1]:
+                return False
+        return True
 
 #Runtime: 60 ms, faster than 10.25% of Python3 online submissions for Long Pressed Name.
 #Memory Usage: 13.6 MB, less than 97.52% of Python3 online submissions for Long Pressed Name.
 
-class Solution:
+class Solution1:
     def isLongPressedName(self, name:str, typed: str):
         nI, tI = 0, 0
         while tI < len(typed) and nI < len(name):
