@@ -73,5 +73,3 @@ import itertools
 #     for key, val in chCt.items():
 #         ranges[val] += val
 #     return max(ranges.values())
-
-if __name__ == '__main__':
