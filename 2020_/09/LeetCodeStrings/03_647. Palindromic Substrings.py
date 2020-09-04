@@ -2,6 +2,72 @@ import collections
 import numpy as np
 from typing import List
 
+import numpy as np
+
+class SolutionNp:
+    def countSubstrings(self, s: str) -> int:
+        ct = 0
+        for i in range(len(s)):
+            ct += 1
+            S1 = np.asarray(s[i])
+            errors = 0
+            for j in range(i + 1, len(s)):
+                #appendndarray
+                #A copy of arr with values appended to axis. Note that append does not occur in-place: a new array is allocated and filled. If axis is None, out is a flattened array.
+                S1 = np.append(S1, s[j])
+                if np.all(S1 == np.flip(S1)):
+                    ct += 1
+                elif errors < 2:
+                    errors += 1
+                elif errors > 2:
+                    break
+        return ct
+
+#Runtime: 504 ms, faster than 22.95% of Python3 online submissions for Palindromic Substrings.
+#Memory Usage: 13.9 MB, less than 66.05% of Python3 online submissions for Palindromic Substrings.
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        ct = 0
+        for i in range(len(s)):
+            ct += 1
+            S1 = s[i]
+            errors = 0
+            for j in range(i + 1, len(s)):
+                S1 += s[j]
+                # print(S1)
+                if S1 == S1[::-1]:
+                    ct += 1
+                elif errors < 2:
+                    errors += 1
+                elif errors > 2:
+                    break
+        return ct
+
+
+# class Solution:
+#     def countSubstrings(self, s: str) -> int:
+#         ct = 0
+#         a_s = ""
+#         for i, c in enumerate(s):
+#             a_s += s
+#             ct += 1
+#             L, R = i-1, i+1
+#             a_s2 = a_s
+#             while L >= 0 and R <= len(s) -1:
+#                 a_s2 += s[L]
+#                 if a_s2 == a_s2[::-1]:
+#                     ct += 1
+#                 else: a_s2 -= s[L]
+#                 a_s2 += s[R]
+#                 if a_s2 == a_s2[::-1]:
+#                     ct += 1
+#                 else: a_s2 -= s[R]
+#                 L -= 1
+#                 R += 1
+#         return ct
+s = Solution()
+print(s.countSubstrings("aaa"))
+
 #
 # class Solution:
 #     def countSubstrings(self, s: str) -> int:
@@ -52,3 +118,15 @@ class Solution2:
 
 s = Solution()
 print(s.countSubstrings("aba"))
+
+#64
+
+print(s.countSubstrings("bbccaacacdbdbcbcbbbcbadcbdddbabaddbcadb"))
+#0.0009999275207519531
+#1*10^-3
+np_s = SolutionNp()
+import time
+curr2 = time.time()
+print(np_s.countSubstrings("bbccaacacdbdbcbcbbbcbadcbdddbabaddbcadb"))
+print('t2: ', (time.time() - curr2) * 10**3)
+
