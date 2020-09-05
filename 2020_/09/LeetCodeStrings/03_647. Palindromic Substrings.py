@@ -4,6 +4,21 @@ from typing import List
 
 import numpy as np
 
+
+# Runtime: 144 ms, faster than 70.11% of Python3 online submissions for Palindromic Substrings.
+# Memory Usage: 13.9 MB, less than 55.34% of Python3 online submissions for Palindromic Substrings.
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        ct = 0
+        for i in range(2*len(s) - 1):
+            L = i // 2
+            R = L + i % 2
+            while L >= 0 and R <= len(s) - 1 and s[L] == s[R]:
+                ct += 1
+                L -= 1
+                R += 1
+        return ct
+
 class SolutionNp:
     def countSubstrings(self, s: str) -> int:
         ct = 0
@@ -37,9 +52,9 @@ class Solution:
                 # print(S1)
                 if S1 == S1[::-1]:
                     ct += 1
-                elif errors < 2:
+                elif errors < 10:
                     errors += 1
-                elif errors > 2:
+                elif errors > 10:
                     break
         return ct
 
