@@ -29,10 +29,12 @@ from typing import List
 def printVertically(self, s: str) -> List[str]:
     words = list(filter(None, s.split(' ')))
     longest_Len = len(max(words, key=len))
-    res = [[[' '] for _ in range(len(words))] for _ in range(longest_Len)]
+    res = [[' ' for _ in range(len(words))] for _ in range(longest_Len)]
+    print(res)
     for i in range(longest_Len):
         for j in range(len(words)):
             res[i][j] = words[j][i] if len(words[j]) > i else ' '
+    print(res)
     # just remove trailing spaces bro
 
     return [''.join(x).rstrip() for x in res]
