@@ -4,6 +4,24 @@ from typing import List
 
 
 
+# Runtime: 404 ms, faster than 75.53% of Python3 online submissions for People Whose List of Favorite Companies Is Not a Subset of Another List.
+# Memory Usage: 28.5 MB, less than 48.95% of Python3 online submissions for People Whose List of Favorite Companies Is Not a Subset of Another List.
+# [[Set, i]] -> sort entries by len
+
+class Solution:
+    def peopleIndexes(self, favoriteCompanies: List[List[str]]) -> List[int]:
+        res = []
+        subsets = sorted([[set(companies), i]
+                            for i, companies in enumerate(favoriteCompanies)], key=lambda x: len(x[0]))
+        for i, companies in enumerate(subsets):
+            companies, res_i = companies
+            for j, companies2 in enumerate(subsets[i+1:], i+1):
+                companies2 = companies2[0]
+                if all(company in companies2 for company in companies):
+                    break
+            else:
+                res += res_i,
+        return sorted(res)
 # Time complexity report:
 # Iterate each companies,
 # Iterate each hashed set,
@@ -23,7 +41,7 @@ from typing import List
 # Submitted: 0 minutes ago
 # Last executed input:
 # [["vpxetwwrbrkuxnbspjds","efokucevmpehkvrtubqs","bssyzdscexlqlbsswufh","uhsteuhepwiyapfegyix","artcovcjypmkawwmvp
-class Solution:
+class Solution2:
     def peopleIndexes(self, favoriteCompanies: List[List[str]]) -> List[int]:
         subsets = set()
         res = []
