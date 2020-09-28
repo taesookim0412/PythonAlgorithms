@@ -1,6 +1,9 @@
 import collections
 import numpy as np
 from typing import List
+
+#40ms, 29.26% faster
+
 class Solution:
     def numSteps(self, s: str) -> int:
         n = int(s, 2)
