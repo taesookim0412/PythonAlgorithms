@@ -23,18 +23,23 @@ class Solution:
         return ''.join(res)
     #"hehehehehehehehehehehehehehehehehehehehehehehehehehehehmecmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmcmvcnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvnvyayayayayayayayayayayayayayayayayayayayayayakfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfwfuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwpspspspspspspspspspspspspspspspspspsxsrxrxrxrxrxrxrxrxrxrxrxrxrxrxrxrxrxgrogogogogogogogogogogogogogogogogiobibibibibibibibibibibibibibibitbdtdtdtdtdtdtdtdtdtdtdtdtdtdtdtqzqzqzqzqzqzqzqzqzqzqzjzjzjzljljljljljljljljlll"
     #('lll')
+    #PROBLEM: The solution revolves around the fact that if there is a solution, then the most occuring character will be every other character.
+    #This is the base case for deriving a solution.
+    #Instead of iterating each letter and appending to the resultant string,
+    #the answer is to iterate through the resultant string (i*2) % len and pop each letter.
     def reorganizeString2(self, S: str) -> str:
         wordCt = collections.Counter(S)
         res = ['' for _ in range(len(S))]
         words = list(sorted([[letter, i] for letter, i in wordCt.items()], key=lambda x: x[1]))
         indx = 0
+        offset = 0
         if words[-1][1] > (len(S) + 1 ) // 2:
             return ''
         while indx != len(S):
-            offset = -1
+            offset -= 1
             if indx % 2:
-                if len(words) > 1:
-                    offset -= 1
+                offset += 2
+            print(offset)
             words[offset][1] -= 1
             nextLetter = words[offset][0]
             if words[offset][1] == 0:
@@ -113,3 +118,4 @@ print(s.reorganizeString("aaabc"))
 print(s.reorganizeString("abracadabra"))
 print(s.reorganizeString("patch"))
 print(s.reorganizeString("tndsewnllhrtwsvxenkscbivijfqnysamckzoyfnapuotmdexzkkrpmppttficzerdndssuveompqkemtbwbodrhwsfpbmkafpwyedpcowruntvymxtyyejqtajkcjakghtdwmuygecjncxzcxezgecrxonnszmqmecgvqqkdagvaaucewelchsmebikscciegzoiamovdojrmmwgbxeygibxxltemfgpogjkhobmhwquizuwvhfaiavsxhiknysdghcawcrphaykyashchyomklvghkyabxatmrkmrfsppfhgrwywtlxebgzmevefcqquvhvgounldxkdzndwybxhtycmlybhaaqvodntsvfhwcuhvuccwcsxelafyzushjhfyklvghpfvknprfouevsxmcuhiiiewcluehpmzrjzffnrptwbuhnyahrbzqvirvmffbxvrmynfcnupnukayjghpusewdwrbkhvjnveuiionefmnfxao"))
+print(s.reorganizeString2("tndsewnllhrtwsvxenkscbivijfqnysamckzoyfnapuotmdexzkkrpmppttficzerdndssuveompqkemtbwbodrhwsfpbmkafpwyedpcowruntvymxtyyejqtajkcjakghtdwmuygecjncxzcxezgecrxonnszmqmecgvqqkdagvaaucewelchsmebikscciegzoiamovdojrmmwgbxeygibxxltemfgpogjkhobmhwquizuwvhfaiavsxhiknysdghcawcrphaykyashchyomklvghkyabxatmrkmrfsppfhgrwywtlxebgzmevefcqquvhvgounldxkdzndwybxhtycmlybhaaqvodntsvfhwcuhvuccwcsxelafyzushjhfyklvghpfvknprfouevsxmcuhiiiewcluehpmzrjzffnrptwbuhnyahrbzqvirvmffbxvrmynfcnupnukayjghpusewdwrbkhvjnveuiionefmnfxao"))
